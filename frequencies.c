@@ -126,6 +126,7 @@ uint32_t FREQUENCY_RoundToStep(uint32_t freq, uint16_t step)
 	}
 	if(step == 1)
 		return freq;
+  if(step >= 1000) step = step/2;                     //allow half channel entry
 	return (freq + (step + 1) / 2) / step * step;
 }
 
